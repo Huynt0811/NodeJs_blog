@@ -17,8 +17,7 @@
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
     </div>
-
-    <div style="padding-left: 16px">
+    <div class="container" style="padding-left: 16px">
         <table class="table table-striped table-primary">
             <thead>
                 <tr>
@@ -56,7 +55,27 @@
                     <% }%>
             </tbody>
         </table>
+        <form action="/create-new-user" method="POST">
+            <div class="mb-1">
+                <label class="form-label">Fisrt Name:</label>
+                <input name="fisrtName" type="text" class="form-control">
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Last Name:</label>
+                <input name="lastName" type="text" class="form-control">
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Email:</label>
+                <input name="email" type="email" class="form-control">
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Address:</label>
+                <input name="address" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
+
 </body>
 
 </html>
