@@ -1,8 +1,10 @@
 import express from "express";
+import multer from "multer";
 const app = express();
 import configViewEngine from "./configs/viewEngine.js";
 import initWebRoute from "./route/web";
 import initAPIRoute from "./route/api.js";
+
 const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

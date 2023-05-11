@@ -25,7 +25,7 @@ let createNewUser = async (req, res) => {
 let updateUser = async (req, res) => {
     let { fisrtName, lastName, email, address, id } = req.body;
     if (!fisrtName || !lastName || !email || !address) {
-        return res.status(400).json({ message: 'missing required data param' });
+        return res.status(400).json({ message: 'missing required data param edit' });
     }
     await pool.execute(
         "UPDATE users SET fisrtName = ?, lastName = ?, email= ?,address = ? WHERE id = ?",
@@ -36,8 +36,11 @@ let updateUser = async (req, res) => {
     })
 };
 let deleteUser = async (req, res) => {
-    let userId = req.body.id;
-    await pool.execute("delete from users where id = ?", [userId]);
+    let userId = req.params.id;
+    if (!userId) {
+        return res.status(400).json({ message: 'missing required data param edit' });
+    }
+    let logDel = await pool.execute("delete from users where id = ?", [userId]);
     return res.status(200).json({
         message: 'ok',
     })

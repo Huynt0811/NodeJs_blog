@@ -26,3 +26,8 @@ body {
   background-color: #04aa6d;
   color: white;
 }
+
+.upload-file-container {
+  padding: 15px;
+
+}
